@@ -115,13 +115,13 @@
       <entry value="65536" name="GNSS_FLAG_INVALID_POSITION">
         <description>Set if position is not valid / cleared when valid position is received</description>
       </entry>
-      <entry value="131072" name="SYSTEM_FLAG_RESERVED1">
+      <entry value="131072" name="GNSS_FLAG_RESERVED1">
         <description>Reserved</description>
       </entry>
-      <entry value="262144" name="SYSTEM_FLAG_RESERVED2">
+      <entry value="262144" name="GNSS_FLAG_RESERVED2">
         <description>Reserved</description>
       </entry>
-      <entry value="524288" name="SYSTEM_FLAG_RESERVED3">
+      <entry value="524288" name="GNSS_FLAG_RESERVED3">
         <description>Reserved</description>
       </entry>
     </enum>
