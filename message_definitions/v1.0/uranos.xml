@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>common.xml</include>
+  <enums>
+    <enum name="URANOS_COMPONENT_ID">
+      <description>Uranos component IDs, these overlap with the standard component IDs that are defined in common.xml</description>
+      <entry value="1" name="COMPONENT_MISSION_MANAGER">
+        <description>Mission Manager; same as MAV_COMP_ID_AUTOPILOT1</description>
+      </entry>
+      <entry value="2" name="COMPONENT_COMM_MANAGER">
+        <description>Communication Manager</description>
+      </entry>
+      <entry value="3" name="COMPONENT_FLIGHTCONTROLLER">
+        <description>Flight Controller</description>
+      </entry>
+      <entry value="4" name="COMPONENT_DJI_OSDK">
+        <description>DJI Onboard SDK</description>
+      </entry>
+      <entry value="5" name="COMPONENT_UC_COMM">
+        <description>uC Comm</description>
+      </entry>
+      <entry value="6" name="COMPONENT_DATA_LOGGER">
+        <description>Data logger</description>
+      </entry>
+      <entry value="7" name="COMPONENT_CELL_MODEM">
+        <description>Cellular modem</description>
+      </entry>
+      <entry value="8" name="COMPONENT_UHF_RADIO">
+        <description>UHF Radio</description>
+      </entry>
+      <entry value="9" name="COMPONENT_TTB">
+        <description>Time tagging board</description>
+      </entry>
+      <entry value="10" name="COMPONENT_SYSTEM">
+        <description>System component</description>
+      </entry>
+      <entry value="100" name="COMPONENT_CAMERA">
+        <description>Camera component; same as MAV_COMP_ID_CAMERA</description>
+      </entry>
+      <entry value="154" name="COMPONENT_GIMBAL">
+        <description>Gimbal component; same as MAV_COMP_ID_GIMBAL</description>
+      </entry>
+      <entry value="155" name="COMPONENT_BLACKBOX">
+        <description>Black Box; same as MAV_COMP_ID_LOG</description>
+      </entry>
+      <entry value="220" name="COMPONENT_GNSS">
+        <description>GNSS; same as MAV_COMP_ID_GPS</description>
+      </entry>
+    </enum>
+    <enum name="URANOS_COMPONENT_STATE">
+      <description>Uranos component operational state</description>
+      <entry value="0" name="STATE_FAILURE">
+        <description>Component not running</description>
+      </entry>
+      <entry value="1" name="STATE_OPERATIONAL">
+        <description>Component is operational</description>
+      </entry>
+      <entry value="2" name="STATE_INIT">
+        <description>Component is initializing</description>
+      </entry>
+      <entry value="3" name="STATE_ERROR">
+        <description>Component is in error status</description>
+      </entry>
+      <entry value="4" name="STATE_BUSY">
+        <description>Busy performing operation. ie fw upgrade</description>
+      </entry>
+    </enum>
+    <enum name="URANOS_COMMON_FLAG">
+      <description>Uranos component status flags</description>
+      <entry value="256" name="COMMON_FLAG_HW_NOT_DETECTED">
+        <description>Underlying HW is not detected/communication error</description>
+      </entry>
+      <entry value="512" name="COMMON_FLAG_WATCHDOG_TIMEOUT">
+        <description>Watchdog has expired</description>
+      </entry>
+      <entry value="1024" name="COMMON_FLAG_RESERVED1">
+        <description>Reserved</description>
+      </entry>
+      <entry value="2048" name="COMMON_FLAG_RESERVED2">
+        <description>Reserved</description>
+      </entry>
+    </enum>
+    <enum name="URANOS_SYSTEM_FLAG">
+      <description>Uranos component status flags</description>
+      <entry value="65536" name="SYSTEM_FLAG_FW_AVAILABLE">
+        <description>Set when fw upgrade is detected on sd / cleared on boot</description>
+      </entry>
+      <entry value="131072" name="SYSTEM_FLAG_NVM_FAILURE">
+        <description>Set when Non volatile memory has failed / cleared on boot</description>
+      </entry>
+      <entry value="262144" name="SYSTEM_FLAG_RESERVED1">
+        <description>Reserved</description>
+      </entry>
+      <entry value="524288" name="SYSTEM_FLAG_RESERVED2">
+        <description>Reserved</description>
+      </entry>
+    </enum>
+    <enum name="URANOS_MISSION_FLAG">
+      <description>Uranos component status flags</description>
+      <entry value="65536" name="MISSION_FLAG_MISSION_UNDERWAY">
+        <description>Set if mission is underway / cleared when mission has been aborted/paused</description>
+      </entry>
+      <entry value="131072" name="MISSION_FLAG_MISSION_PAUSED">
+        <description>Set if mission is paused / cleared when mission resume is sent</description>
+      </entry>
+      <entry value="262144" name="MISSION_FLAG_MISSION_ABORTED">
+        <description>Set if mission is aborted / cleared when starting new mission start is sent</description>
+      </entry>
+      <entry value="524288" name="MISSION_FLAG_RESERVED1">
+        <description>Reserved</description>
+      </entry>
+    </enum>
+    <enum name="URANOS_GNSS_FLAG">
+      <description>Uranos component status flags</description>
+      <entry value="65536" name="GNSS_FLAG_INVALID_POSITION">
+        <description>Set if position is not valid / cleared when valid position is received</description>
+      </entry>
+      <entry value="131072" name="SYSTEM_FLAG_RESERVED1">
+        <description>Reserved</description>
+      </entry>
+      <entry value="262144" name="SYSTEM_FLAG_RESERVED2">
+        <description>Reserved</description>
+      </entry>
+      <entry value="524288" name="SYSTEM_FLAG_RESERVED3">
+        <description>Reserved</description>
+      </entry>
+    </enum>
+  </enums>
+  <messages>
+    <message id="5555" name="URANOS_STATUS">
+      <description>Provides comprehensive status of all components</description>
+      <field type="uint32_t" name="comm_manager">Status bitfield</field>
+      <field type="uint32_t" name="mission_manager">Status bitfield</field>
+      <field type="uint32_t" name="flightcontroller">Status bitfield</field>
+      <field type="uint32_t" name="gnss">Status bitfield</field>
+      <field type="uint32_t" name="camera">Status bitfield</field>
+      <field type="uint32_t" name="gimbal">Status bitfield</field>
+      <field type="uint32_t" name="uhf_radio">Status bitfield</field>
+      <field type="uint32_t" name="cell_radio">Status bitfield</field>
+      <field type="uint32_t" name="data_logger">Status bitfield</field>
+      <field type="uint32_t" name="blackbox">Status bitfield</field>
+      <field type="uint32_t" name="uc_comm">Status bitfield</field>
+    </message>
+  </messages>
+</mavlink>
