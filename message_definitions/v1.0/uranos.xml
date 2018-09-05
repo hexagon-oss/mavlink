@@ -129,6 +129,8 @@
   <messages>
     <message id="5555" name="URANOS_STATUS">
       <description>Provides comprehensive status of all components</description>
+      <field type="uint32_t" name="system">Status bitfield</field>
+      <field type="uint32_t" name="dji">Status bitfield</field>
       <field type="uint32_t" name="comm_manager">Status bitfield</field>
       <field type="uint32_t" name="mission_manager">Status bitfield</field>
       <field type="uint32_t" name="flightcontroller">Status bitfield</field>
