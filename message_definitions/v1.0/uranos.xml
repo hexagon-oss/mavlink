@@ -125,6 +125,27 @@
         <description>Reserved</description>
       </entry>
     </enum>
+    <enum name="URANOS_ACK_RESULT">
+      <description>Uranos component status flags</description>
+      <entry value="0" name="URANOS_ACK_ACCEPTED">
+        <description></description>
+      </entry>
+      <entry value="1" name="URANOS_ACK_FAILED">
+        <description></description>
+      </entry>
+    </enum>
+    <enum name="URANOS_MESSAGE_TYPE">
+      <description>Uranos component status flags</description>
+      <entry value="0" name="MESSAGE_TYPE_INFO">
+        <description></description>
+      </entry>
+      <entry value="1" name="MESSAGE_TYPE_WARNING">
+        <description></description>
+      </entry>
+      <entry value="2" name="MESSAGE_TYPE_ERROR">
+        <description></description>
+      </entry>
+    </enum>
   </enums>
   <messages>
     <message id="5555" name="URANOS_STATUS">
@@ -142,6 +163,38 @@
       <field type="uint32_t" name="data_logger">Status bitfield</field>
       <field type="uint32_t" name="blackbox">Status bitfield</field>
       <field type="uint32_t" name="uc_comm">Status bitfield</field>
+    </message>
+    <message id="5700" name="URANOS_ACK">
+      <description>Ack for uranos acknowleged messages</description>
+      <field type="uint32_t" name="id">ID of message being responded to</field>
+      <field type="uint32_t" name="type">Type of message being responded to</field>
+      <field type="uint32_t" name="result">Acknowledge result</field>
+    </message>
+    <message id="5701" name="URANOS_WAYPOINT_REACHED">
+      <description>Waypoint reached message</description>
+      <field type="uint32_t" name="id">ID of message; incremented every transmit that is responded to</field>
+      <field type="uint16_t" name="seq">Mission Item sequence</field>
+      <field type="uint64_t" name="time">GPS time</field>
+      <field type="int32_t[3]" name="position">lat=deg E7, lon=deg E7, alt=mm (sea level)</field>
+    </message>
+    <message id="5702" name="URANOS_CAMERA_IMAGE_CAPTURED">
+      <description>Camera image captured</description>
+      <field type="uint32_t" name="id">ID of message; incremented every transmit that is responded to</field>
+      <field type="int32_t" name="image_index">Zero based index of this image (image count since armed -1)</field>
+      <field type="uint64_t" name="time">GPS time</field>
+      <field type="uint8_t" name="camera_id">Camera ID (1 for first, 2 for second, etc.)</field>
+      <field type="int32_t[3]" name="position">lat=deg E7, lon=deg E7, alt=mm (sea level)</field>
+      <field type="float[4]" name="attitude">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
+      <field type="float[4]" name="drone_orientation">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
+      <field type="float[4]" name="gimbal_orientation">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
+      <field type="int8_t" name="capture_result">Boolean indicating success (1) or failure (0) while capturing this image.</field>
+    </message>
+    <message id="5703" name="URANOS_ONBOARD_MESSAGE">
+      <description>Onboard message</description>
+      <field type="uint32_t" name="id">ID of message; incremented every transmit that is responded to</field>
+      <field type="uint64_t" name="time">GPS Time</field>
+      <field type="int32_t" name="message_id">ID of error/warning/info message (Messages definition shared between Onboard and AppApp)</field>
+      <field type="uint8_t" name="message_type"></field>
     </message>
   </messages>
 </mavlink>
