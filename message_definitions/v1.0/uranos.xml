@@ -175,7 +175,9 @@
       <field type="uint32_t" name="id">ID of message; incremented every transmit that is responded to</field>
       <field type="uint16_t" name="seq">Mission Item sequence</field>
       <field type="uint64_t" name="time">GPS time</field>
-      <field type="int32_t[3]" name="position">lat=deg E7, lon=deg E7, alt=mm (sea level)</field>
+      <field type="int32_t" name="lat">lat=deg E7</field>
+      <field type="int32_t" name="lon">lon=deg E7</field>
+      <field type="int32_t" name="alt">alt=mm (sea level)</field>
     </message>
     <message id="5702" name="URANOS_CAMERA_IMAGE_CAPTURED">
       <description>Camera image captured</description>
@@ -183,7 +185,9 @@
       <field type="int32_t" name="image_index">Zero based index of this image (image count since armed -1)</field>
       <field type="uint64_t" name="time">GPS time</field>
       <field type="uint8_t" name="camera_id">Camera ID (1 for first, 2 for second, etc.)</field>
-      <field type="int32_t[3]" name="position">lat=deg E7, lon=deg E7, alt=mm (sea level)</field>
+      <field type="int32_t" name="lat">lat=deg E7</field>
+      <field type="int32_t" name="lon">lon=deg E7</field>
+      <field type="int32_t" name="alt">alt=mm (sea level)</field>
       <field type="float[4]" name="attitude">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
       <field type="float[4]" name="drone_orientation">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
       <field type="float[4]" name="gimbal_orientation">Quaternion of image orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)</field>
