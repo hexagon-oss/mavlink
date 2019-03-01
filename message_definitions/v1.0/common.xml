@@ -2103,6 +2103,9 @@
       <entry value="11" name="MAV_PARAM_EXT_TYPE_CUSTOM">
         <description>Custom Type</description>
       </entry>
+      <entry value="12" name="MAV_PARAM_EXT_TYPE_CHANNEL">
+        <description>Radio Channel Type</description>
+      </entry>
     </enum>
     <enum name="MAV_RESULT">
       <description>result from a mavlink command</description>
