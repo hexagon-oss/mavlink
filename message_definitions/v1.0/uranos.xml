@@ -164,6 +164,13 @@
       <field type="uint32_t" name="blackbox">Status bitfield</field>
       <field type="uint32_t" name="uc_comm">Status bitfield</field>
     </message>
+    <message id="5556" name="URANOS_RADIO_STATUS">
+      <description>Radio status message</description>
+      <field type="uint8_t" name="corr_percent">Percentage of correction messages sent/received in the last minute</field>
+      <field type="uint64_t" name="corr_age">Age of the last sent/received position correction message</field>
+      <field type="int16_t" name="channel">Channel numbers used by the customer</field>
+      <field type="uint32_t" name="frequency">403.00000 to 473.00000 MHz</field>
+    </message>
     <message id="5700" name="URANOS_ACK">
       <description>Ack for uranos acknowleged messages</description>
       <field type="uint32_t" name="id">ID of message being responded to</field>
