@@ -46,6 +46,9 @@
       <entry value="220" name="COMPONENT_GNSS">
         <description>GNSS; same as MAV_COMP_ID_GPS</description>
       </entry>
+      <entry value="230" name="COMPONENT_CELL_MODEM_MOUNTPOINTS">
+        <description>Provider of cellular modem mountpoints</description>
+      </entry>
     </enum>
     <enum name="URANOS_COMPONENT_STATE">
       <description>Uranos component operational state</description>
