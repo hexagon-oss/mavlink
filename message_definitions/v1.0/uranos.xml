@@ -213,11 +213,11 @@
     <message id="5800" name="URANOS_CHANNEL">
       <description>Radio channel message</description>
       <field type="uint8_t" name="enable">Channel ON/OFF</field>
-      <field type="uint16_t" name="channel">Channel numbers used by the customer</field>
+      <field type="int16_t" name="channel">Channel numbers used by the customer</field>
       <field type="uint8_t" name="fec">Forward error correction; ON/OFF for Satel 4-FSK FEC, others always ON. </field>
       <field type="uint8_t" name="channel_spacing">Spacing of the channel ('1' = 12.5 kHz, '2' = 20 kHz, '3' = 25 kHz)</field>
-      <field type="float" name="tx_freq">Transmitting frequency (403 - 473 MHz)</field>
-      <field type="float" name="rx_freq">Receiving frequency (403 - 473 MHz)</field>
+      <field type="double" name="tx_freq">Transmitting frequency (403 - 473 MHz)</field>
+      <field type="double" name="rx_freq">Receiving frequency (403 - 473 MHz)</field>
       <field type="uint16_t" name="tx_power">Transmitting power (100, 500, 1000 mW)</field>
     </message>
   </messages>
