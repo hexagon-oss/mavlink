@@ -49,6 +49,9 @@
       <entry value="230" name="COMPONENT_CELL_MODEM_MOUNTPOINTS">
         <description>Provider of cellular modem mountpoints</description>
       </entry>
+	  <entry value="231" name="COMPONENT_UHF_RADIO_CHANNEL_TABLE">
+        <description>Provider of UHF Radio channel table</description>
+      </entry>
     </enum>
     <enum name="URANOS_COMPONENT_STATE">
       <description>Uranos component operational state</description>
