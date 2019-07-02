@@ -165,7 +165,7 @@
       <field type="uint32_t" name="camera">Status bitfield</field>
       <field type="uint32_t" name="gimbal">Status bitfield</field>
       <field type="uint32_t" name="uhf_radio">Status bitfield</field>
-      <field type="uint32_t" name="cell_radio">Status bitfield</field>
+      <field type="uint32_t" name="cell_modem">Status bitfield</field>
       <field type="uint32_t" name="data_logger">Status bitfield</field>
       <field type="uint32_t" name="blackbox">Status bitfield</field>
       <field type="uint32_t" name="uc_comm">Status bitfield</field>
