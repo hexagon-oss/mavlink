@@ -175,7 +175,7 @@
       <field type="uint8_t" name="corr_percent">Percentage of correction messages sent/received in the last minute</field>
       <field type="uint32_t" name="corr_age">Age of the last sent/received position correction message</field>
       <field type="int16_t" name="channel">Channel numbers used by the customer</field>
-      <field type="double" name="rx_freq">403.00000 to 473.00000 MHz</field>
+      <field type="uint32_t" name="rx_freq">403000000 to 473000000 Hz</field>
     </message>
     <message id="5557" name="URANOS_MODEM_STATUS">
       <description>Modem status message</description>
@@ -223,8 +223,8 @@
       <field type="uint8_t" name="enable">Channel ON/OFF</field>
       <field type="int16_t" name="channel">Channel numbers used by the customer</field>
       <field type="uint8_t" name="channel_spacing">Spacing of the channel ('1' = 12.5 kHz, '2' = 20 kHz, '3' = 25 kHz)</field>
-      <field type="double" name="tx_freq">Transmitting frequency (403 - 473 MHz)</field>
-      <field type="double" name="rx_freq">Receiving frequency (403 - 473 MHz)</field>
+      <field type="uint32_t" name="tx_freq">Transmitting frequency (403000000 - 473000000 Hz)</field>
+      <field type="uint32_t" name="rx_freq">Receiving frequency (403000000 - 473000000 Hz)</field>
       <field type="uint16_t" name="tx_power">Transmitting power (100, 500, 1000 mW)</field>
     </message>
   </messages>
